@@ -17,10 +17,19 @@ public class Pedidos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+
 	
 	@Column
 	private String numeroPedido;
 	private String Status;
+	private Date dataPrevistaEntrega;
+	private LocalDateTime dataGeracao;
+	private LocalDateTime dataIniProd;
+	private LocalDateTime dataFinProd;
+	private LocalDateTime dataSepara;
+	private LocalDateTime dataTransito;
+	private LocalDateTime dataEntrega;
 	
 	public Integer getId() {
 		return id;
@@ -41,10 +50,10 @@ public class Pedidos {
 		Status = status;
 	}
 
-	public LocalDateTime getDataPrevistaEntrega() {
+	public Date getDataPrevistaEntrega() {
 		return dataPrevistaEntrega;
 	}
-	public void setDataPrevistaEntrega(LocalDateTime dataPrevistaEntrega) {
+	public void setDataPrevistaEntrega(Date dataPrevistaEntrega) {
 		this.dataPrevistaEntrega = dataPrevistaEntrega;
 	}
 	public LocalDateTime getDataGeracao() {
@@ -84,11 +93,4 @@ public class Pedidos {
 		this.dataEntrega = dataEntrega;
 	}
 
-	private LocalDateTime dataPrevistaEntrega;
-	private LocalDateTime dataGeracao;
-	private LocalDateTime dataIniProd;
-	private LocalDateTime dataFinProd;
-	private LocalDateTime dataSepara;
-	private LocalDateTime dataTransito;
-	private LocalDateTime dataEntrega;
 }

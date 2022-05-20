@@ -1,12 +1,11 @@
-package RastreioDePedidos.Api.RastreioDePedidos.dto;
+package RastreioDePedidos.Api.RastreioDePedidos.model;
 
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class NovoPedido {
+public class AlteracaoPedidoModel {
+	
 	private Integer id;
-	private String numeroPedido;
-	private Date DataGeracaoPedido;
 	private String Status;
 	private Date dataPrevistaEntrega;
 	private LocalDateTime dataIniProd;
@@ -14,22 +13,11 @@ public class NovoPedido {
 	private LocalDateTime dataSepara;
 	private LocalDateTime dataTransito;
 	private LocalDateTime dataEntrega;
-	
 	public Integer getId() {
 		return id;
 	}
-	
-	public String getNumeroPedido() {
-		return numeroPedido;
-	}
-	public void setNumeroPedido(String numeroPedido) {
-		this.numeroPedido = numeroPedido;
-	}
-	public Date getDataGeracaoPedido() {
-		return DataGeracaoPedido;
-	}
-	public void setDataGeracaoPedido(Date dataGeracaoPedido) {
-		DataGeracaoPedido = dataGeracaoPedido;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getStatus() {
 		return Status;
@@ -73,8 +61,6 @@ public class NovoPedido {
 	public void setDataEntrega(LocalDateTime dataEntrega) {
 		this.dataEntrega = dataEntrega;
 	}
-	
-	
 	
 
 }
