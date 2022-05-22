@@ -6,7 +6,7 @@ import java.util.Date;
 public class AlteracaoPedidoModel {
 	
 	private Integer id;
-	private String Status;
+	private StatusPedido Status;
 	private Date dataPrevistaEntrega;
 	private LocalDateTime dataIniProd;
 	private LocalDateTime dataFinProd;
@@ -19,10 +19,10 @@ public class AlteracaoPedidoModel {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getStatus() {
+	public StatusPedido getStatus() {
 		return Status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(StatusPedido status) {
 		Status = status;
 	}
 	public Date getDataPrevistaEntrega() {

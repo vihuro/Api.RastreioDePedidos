@@ -3,9 +3,11 @@ package RastreioDePedidos.Api.RastreioDePedidos.dto;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import RastreioDePedidos.Api.RastreioDePedidos.model.StatusPedido;
+
 public class AlteracaoPedido {
 	
-	private String Status;
+	private StatusPedido Status;
 	private Date dataPrevistaEntrega;
 	private LocalDateTime dataIniProd;
 	private LocalDateTime dataFinProd;
@@ -14,10 +16,10 @@ public class AlteracaoPedido {
 	private LocalDateTime dataEntrega;
 	
 	
-	public String getStatus() {
+	public StatusPedido getStatus() {
 		return Status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(StatusPedido status) {
 		Status = status;
 	}
 	public Date getDataPrevistaEntrega() {

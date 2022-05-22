@@ -5,10 +5,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name= "tab_pedidos")
@@ -19,11 +23,16 @@ public class Pedidos {
 	private Integer id;
 
 
-	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column
 	private String numeroPedido;
-	private String Status;
+	
+	@Enumerated(EnumType.STRING)
+	private StatusPedido Status;
+	
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date dataPrevistaEntrega;
+	@JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
 	private LocalDateTime dataGeracao;
 	private LocalDateTime dataIniProd;
 	private LocalDateTime dataFinProd;
@@ -43,13 +52,13 @@ public class Pedidos {
 	public void setNumeroPedido(String numeroPedido) {
 		this.numeroPedido = numeroPedido;
 	}
-	public String getStatus() {
+
+	public StatusPedido getStatus() {
 		return Status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(StatusPedido status) {
 		Status = status;
 	}
-
 	public Date getDataPrevistaEntrega() {
 		return dataPrevistaEntrega;
 	}

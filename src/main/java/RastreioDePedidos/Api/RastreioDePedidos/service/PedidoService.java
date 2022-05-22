@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import RastreioDePedidos.Api.RastreioDePedidos.dto.AlteracaoPedido;
 import RastreioDePedidos.Api.RastreioDePedidos.dto.NovoPedido;
 import RastreioDePedidos.Api.RastreioDePedidos.model.Pedidos;
 import RastreioDePedidos.Api.RastreioDePedidos.repository.PedidosRepository;
@@ -20,6 +19,7 @@ public class PedidoService {
 		Pedidos pedidos = new Pedidos();
 		pedidos.setNumeroPedido(novoPedido.getNumeroPedido());
 		pedidos.setDataGeracao(LocalDateTime.now());
+
 		
 		repository.save(pedidos);
 	}
@@ -30,8 +30,7 @@ public class PedidoService {
 		
 		Pedidos alteracaoDto = new Pedidos();
 		
-		alteracaoDto = repository.getById(alterar.getId());
-		
+		alteracaoDto = repository.getByNumeroPedido(alterar.getNumeroPedido());
 
 		alteracaoDto.setDataPrevistaEntrega(alterar.getDataPrevistaEntrega());
 		alteracaoDto.setDataIniProd(alterar.getDataIniProd());
@@ -42,6 +41,19 @@ public class PedidoService {
 		alteracaoDto.setStatus(alterar.getStatus());
 		
 		repository.save(alteracaoDto);
+		
+	}
+
+
+
+	public void delete(NovoPedido deletePedido) {
+		
+		Pedidos deleteDto = new Pedidos();
+		
+		deleteDto = repository.getByNumeroPedido(deletePedido.getNumeroPedido());
+		
+
+		repository.delete(deleteDto);
 		
 	}
 

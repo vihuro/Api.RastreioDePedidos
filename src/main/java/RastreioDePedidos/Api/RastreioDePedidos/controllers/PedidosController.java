@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +42,7 @@ public class PedidosController {
 	}
 	
 	@GetMapping("/{numeroPedido}/")
-	private Optional<NovoPedido> findAll(@PathVariable("numeroPedido") String numeroPedido){
+	private Optional<Pedidos> findAll(@PathVariable("numeroPedido") String numeroPedido){
 		return  repository.findByNumeroPedido(numeroPedido);
 	}
 	
@@ -55,6 +56,11 @@ public class PedidosController {
 	public void alterar(@RequestBody NovoPedido saveAlteracao) {
 	
 			service.saveAlteracao(saveAlteracao);
+	}
 	
+	@DeleteMapping
+	public void delete(@RequestBody NovoPedido deletePedido) {
+		
+		service.delete(deletePedido);
 	}
 }

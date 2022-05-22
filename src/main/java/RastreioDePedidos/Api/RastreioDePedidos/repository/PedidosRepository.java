@@ -9,7 +9,9 @@ import RastreioDePedidos.Api.RastreioDePedidos.model.Pedidos;
 
 public interface PedidosRepository extends JpaRepository <Pedidos, Integer>{
 	
-	Optional<NovoPedido> findByNumeroPedido(String numeroPedido);
+	Optional <Pedidos> findByNumeroPedido(String numeroPedido);
+
+	Pedidos getByNumeroPedido(String numeroPedido);
 
 
 
