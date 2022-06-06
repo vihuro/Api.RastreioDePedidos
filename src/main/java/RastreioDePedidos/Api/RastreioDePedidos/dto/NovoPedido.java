@@ -10,7 +10,7 @@ public class NovoPedido {
 	private String numeroPedido;
 	
 	private Date DataGeracaoPedido;
-	private StatusPedido Status;
+	private String Status;
 	private Date dataPrevistaEntrega;
 	private LocalDateTime dataIniProd;
 	private LocalDateTime dataFinProd;
@@ -34,11 +34,11 @@ public class NovoPedido {
 	public void setDataGeracaoPedido(Date dataGeracaoPedido) {
 		DataGeracaoPedido = dataGeracaoPedido;
 	}
-	public StatusPedido getStatus() {
+	public String getStatus() {
 		return Status;
 	}
 	
-	public void setStatus(StatusPedido status) {
+	public void setStatus(String status) {
 		Status = status;
 	}
 

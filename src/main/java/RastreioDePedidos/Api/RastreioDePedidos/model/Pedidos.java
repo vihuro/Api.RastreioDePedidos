@@ -26,9 +26,7 @@ public class Pedidos {
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column
 	private String numeroPedido;
-	
-	@Enumerated(EnumType.STRING)
-	private StatusPedido Status;
+	private String Status;
 	
 	@JsonFormat(pattern = "dd-MM-yyyy")
 	private Date dataPrevistaEntrega;
@@ -39,6 +37,12 @@ public class Pedidos {
 	private LocalDateTime dataSepara;
 	private LocalDateTime dataTransito;
 	private LocalDateTime dataEntrega;
+	private String dataGeracaoUsuario;
+	private String dataIniProdUsuario;
+	private String dataFinProdUsuario;
+	private String dataSeparaUsuario;
+	private String dataTransitoUsuario;
+	private String dataEntregaUsuario;
 	
 	public Integer getId() {
 		return id;
@@ -53,10 +57,10 @@ public class Pedidos {
 		this.numeroPedido = numeroPedido;
 	}
 
-	public StatusPedido getStatus() {
+	public String getStatus() {
 		return Status;
 	}
-	public void setStatus(StatusPedido status) {
+	public void setStatus(String status) {
 		Status = status;
 	}
 	public Date getDataPrevistaEntrega() {
@@ -101,5 +105,43 @@ public class Pedidos {
 	public void setDataEntrega(LocalDateTime dataEntrega) {
 		this.dataEntrega = dataEntrega;
 	}
+	public String getDataGeracaoUsuario() {
+		return dataGeracaoUsuario;
+	}
+	public void setDataGeracaoUsuario(String dataGeracaoUsuario) {
+		this.dataGeracaoUsuario = dataGeracaoUsuario;
+	}
+	public String getDataIniProdUsuario() {
+		return dataIniProdUsuario;
+	}
+	public void setDataIniProdUsuario(String dataIniProdUsuario) {
+		this.dataIniProdUsuario = dataIniProdUsuario;
+	}
+	public String getDataFinProdUsuario() {
+		return dataFinProdUsuario;
+	}
+	public void setDataFinProdUsuario(String dataFinProdUsuario) {
+		this.dataFinProdUsuario = dataFinProdUsuario;
+	}
+	public String getDataSeparaUsuario() {
+		return dataSeparaUsuario;
+	}
+	public void setDataSeparaUsuario(String dataSeparaUsuario) {
+		this.dataSeparaUsuario = dataSeparaUsuario;
+	}
+	public String getDataTransitoUsuario() {
+		return dataTransitoUsuario;
+	}
+	public void setDataTransitoUsuario(String dataTransitoUsuario) {
+		this.dataTransitoUsuario = dataTransitoUsuario;
+	}
+	public String getDataEntregaUsuario() {
+		return dataEntregaUsuario;
+	}
+	public void setDataEntregaUsuario(String dataEntregaUsuario) {
+		this.dataEntregaUsuario = dataEntregaUsuario;
+	}
 
+
+	
 }
